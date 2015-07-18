@@ -13,7 +13,7 @@ app.get('/', function (req, res) {
 });
 
 io.on('connection', function (socket) {
-    socket.on('userTyping', function (data) {
-        console.log(data);
-    });
+    setInterval(function () {
+        socket.emit('temp changed', { currentTemperature: Math.floor(Math.random()*100)});
+    }, 1000);
 });
