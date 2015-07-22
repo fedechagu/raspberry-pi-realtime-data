@@ -12,7 +12,7 @@ var io = require('socket.io')(server);
 app.use(express.static('/public'));
 
 app.get('/', function (req, res) {
-    res.sendFile(path.join(__dirname, 'public/index.html'));
+    res.sendFile(path.join(__dirname, 'public/app/views/index.html'));
 });
 
 io.on('connection', function (socket) {
