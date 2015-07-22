@@ -4,7 +4,10 @@ var https = require("https");
 var fs = require('fs');
 var path = require('path');
 
-var server = app.listen(3000);
+app.set('port', (process.env.PORT || 5000));
+
+var server = app.listen(app.get('port'));
+
 var io = require('socket.io')(server);
 app.use(express.static('/public'));
 
