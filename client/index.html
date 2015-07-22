@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Realtime Sensor Data</title>
+    <script src="https://cdn.socket.io/socket.io-1.3.5.js"></script>
+  </head>
+  <body>
+    Current Temp:
+
+    <div id = "currentTemp"></div>
+
+  </body>
+
+  <script>
+    var socket = io();
+
+    socket.on('temp changed', function (data) {
+        var el = document.getElementById('currentTemp');
+        el.innerHTML =  data.currentTemperature;
+    })
+
+  </script>
+</html
